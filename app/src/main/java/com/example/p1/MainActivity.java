@@ -2,6 +2,7 @@ package com.example.p1;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
@@ -19,7 +20,11 @@ ActivityMainBinding demo;
         demo.submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent i = new Intent(getApplicationContext(), MainActivity2.class);
+                i.putExtra("xyz",demo.et1.getText().toString());
+                i.putExtra("abc",demo.et2.getText().toString());
 
+                startActivity(i);
             }
         });
     }
